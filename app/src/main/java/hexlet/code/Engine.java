@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Game;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 import java.util.StringJoiner;
@@ -51,6 +47,8 @@ public class Engine {
             case 5:
                 new Progression().play();
                 break;
+            case 6:
+                new Prime().play();
             default:
                 System.exit(0);
         }
@@ -105,5 +103,21 @@ public class Engine {
         }
         System.out.println(result);
         return Integer.toString(correctAnswer);
+    }
+
+    public static boolean isPrime(int i) {
+        int var = 2;
+        if (i > 1) {
+            while (i != var) {
+                if (i % var != 0) {
+                    var++;
+                } else {
+                    break;
+                }
+            }
+            return var == i;
+        } else {
+            return false;
+        }
     }
 }
