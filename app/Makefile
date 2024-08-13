@@ -5,7 +5,7 @@ run :
 clean :
 		gradle clean
 setup:
-		.\gradlew wrapper --gradle-version 8.5
+		./gradlew wrapper --gradle-version 8.5
 install:
 		gradle clean install
 build :
