@@ -1,4 +1,4 @@
-run-dist : install
+run-dist : test install
 		./build/install/app/bin/app
 install :
 		gradle clean

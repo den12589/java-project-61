@@ -4,18 +4,29 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
-public class Prime extends Game {
+public class Prime {
+    private final String userName;
+
+    public Prime() {
+        userName = Engine.grittingUser();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+
     public void play() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
             int nextInt = (int) (Math.random() * 100);
-            this.setCorrectAnswer(Engine.isPrime(nextInt) ? "yes" : "no");
+            String correctAnswer = Engine.isPrime(nextInt) ? "yes" : "no";
             System.out.println("Question: " + nextInt);
             System.out.print("Your answer: ");
-            this.setUserAnswer(scanner.nextLine());
-            Engine.checkingAnswer(this);
+            String userAnswer = scanner.nextLine();
+            Engine.checkingAnswer(getUserName(), correctAnswer, userAnswer);
         }
-        Engine.wining(this);
+        Engine.wining(getUserName());
     }
 }

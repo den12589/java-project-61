@@ -5,7 +5,6 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.games.Game;
 
 import java.util.Scanner;
 import java.util.StringJoiner;
@@ -21,16 +20,16 @@ public class Engine {
         return userName;
     }
 
-    public static void wining(Game game) {
-        System.out.println("Congratulations, " + game.getUserName());
+    public static void wining(String userName) {
+        System.out.println("Congratulations, " + userName);
         System.exit(0);
     }
 
-    public static void loosing(Game game) {
-        System.out.println("'" + game.getUserAnswer() + "'"
+    public static void loosing(String userName, String correctAnswer, String userAnswer) {
+        System.out.println("'" + userAnswer + "'"
                 + " is wrong answer ;(. Correct answer was "
-                + "'" + game.getCorrectAnswer() + "'" + ".\n");
-        System.out.println("Let's try again, " + game.getUserName() + "!");
+                + "'" + correctAnswer + "'" + ".\n");
+        System.out.println("Let's try again, " + userName + "!");
         System.exit(0);
     }
 
@@ -70,11 +69,11 @@ public class Engine {
         return '*';
     }
 
-    public static void checkingAnswer(Game game) {
-        if (game.getCorrectAnswer().equals(game.getUserAnswer())) {
+    public static void checkingAnswer(String userName, String correctAnswer, String userAnswer ) {
+        if (correctAnswer.equals(userAnswer)) {
             System.out.println("Correct!");
         } else {
-            Engine.loosing(game);
+            Engine.loosing(userName, correctAnswer, userAnswer);
         }
     }
 

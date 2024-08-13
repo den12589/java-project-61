@@ -4,7 +4,17 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
-public class Progression extends Game {
+public class Progression {
+    private final String userName;
+
+    public Progression() {
+        userName = Engine.grittingUser();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
 
     public void play() {
         System.out.println("What number is missing in the progression?");
@@ -17,11 +27,11 @@ public class Progression extends Game {
                 count = (int) (Math.random() * 10);
             } while (count < 5 || count > 10);
             System.out.print("Question: ");
-            this.setCorrectAnswer(Engine.progressionLine(first, count, step));
+            String correctAnswer = Engine.progressionLine(first, count, step);
             System.out.print("Your answer: ");
-            this.setUserAnswer(scanner.next());
-            Engine.checkingAnswer(this);
+            String userAnswer = scanner.next();
+            Engine.checkingAnswer(getUserName(), correctAnswer, userAnswer);
         }
-        Engine.wining(this);
+        Engine.wining(getUserName());
     }
 }
