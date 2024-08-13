@@ -17,7 +17,11 @@
 4-GCD(win)---------> https://asciinema.org/a/GxrUjk9XxebfHm5qvfw1qROGY
 
 --GCD(lose)--------> https://asciinema.org/a/kO1zwxlrEfPwl0RXNuVXxYA16
+
 5-Progression(win)-> https://asciinema.org/a/rRFHyUacIyjAv21IxIukgjIBT
- -Progression(lose)> https://asciinema.org/a/oEtEGaH2dn4izlB1XsiIW522g
+
+--Progression(lose)> https://asciinema.org/a/oEtEGaH2dn4izlB1XsiIW522g
+
 6-Prime(win)-------> https://asciinema.org/a/Vv5qy0TTPAr1EDsBpl4gDMT9Y
- -Prime(lose)------> https://asciinema.org/a/235qY5nDsgRJDLz41A2iyoekJ
+
+--Prime(lose)------> https://asciinema.org/a/235qY5nDsgRJDLz41A2iyoekJ
