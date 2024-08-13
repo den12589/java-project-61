@@ -4,12 +4,9 @@ run :
 		gradle run
 clean :
 		gradle clean
-setup:
-		./gradlew wrapper --gradle-version 8.5
 install:
 		gradle clean install
-build :
-		gradle clean
+build : clean
 		gradle installDist
 lint :
 		gradle checkstyleMain
