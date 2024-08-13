@@ -4,24 +4,26 @@ import java.util.Scanner;
 
 import hexlet.code.Engine;
 
-public class Calc {
-    public static void playCalc(String userName) {
+public class Calc extends Game {
+
+    public void play() {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int first = Engine.randomNum();
-            int second = Engine.randomNum();
+            int first = (int) (Math.random() * 100);
+            int second = (int) (Math.random() * 100);
             char operand = Engine.randomOperand();
-            int correctAnswer = switch (operand) {
-                case '+' -> first + second;
-                case '-' -> first - second;
-                default -> first * second;
-            };
+            this.setCorrectAnswer(Integer.toString(
+                    switch (operand) {
+                        case '+' -> first + second;
+                        case '-' -> first - second;
+                        default -> first * second;
+                    }));
             System.out.println("Question: " + first + " " + operand + " " + second);
             System.out.print("Your answer: ");
-            int userAnswer = scanner.nextInt();
-            Engine.checkingAnswer(userName, Integer.toString(userAnswer), Integer.toString(correctAnswer) );
+            this.setUserAnswer(scanner.nextLine());
+            Engine.checkingAnswer(this);
         }
-        Engine.wining(userName);
+        Engine.wining(this);
     }
 }
