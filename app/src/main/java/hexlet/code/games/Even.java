@@ -19,8 +19,8 @@ public class Even {
             } else {
                 Engine.loosing(userName, userAnswer, correctAnswer);
             }
-            Engine.wining(userName);
         }
+        Engine.wining(userName);
     }
 }
 

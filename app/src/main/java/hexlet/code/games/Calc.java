@@ -25,7 +25,7 @@ public class Calc {
             } else {
                 Engine.loosing(userName, userAnswer + "", rightAnswer + "");
             }
-            Engine.wining(userName);
         }
+        Engine.wining(userName);
     }
 }
