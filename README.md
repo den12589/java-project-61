@@ -5,8 +5,11 @@
 
 
 1-Gritting --------> https://asciinema.org/a/xVX7OQH8YLiut5rBZSA6fRrkC
+
 2-Even(win) -------> https://asciinema.org/a/dQ5VHXe8M3kiLaKfDXTONQaH5
+
  -Even(lose)-------> https://asciinema.org/a/nzJosIrQFMLhIvknvbPuRn4QY
+ 
 3-Calc(win)--------> https://asciinema.org/a/vh7THEseWVqIRoWfcnwQmUuHW
  -Calc(lose)-------> https://asciinema.org/a/iSYyuWPKo4fMQq4pym9xKVAan
 4-GCD(win)---------> https://asciinema.org/a/GxrUjk9XxebfHm5qvfw1qROGY
