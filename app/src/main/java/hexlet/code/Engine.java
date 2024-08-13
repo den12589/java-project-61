@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -41,6 +42,8 @@ public class Engine {
             case 3:
                 Calc.playCalc(grittingUser());
                 break;
+            case 4:
+                GCD.playGCD(grittingUser());
             default:
                 System.exit(0);
         }
@@ -59,5 +62,13 @@ public class Engine {
             return '-';
         }
         return '*';
+    }
+
+    public static void checkingAnswer(String userName, String userAnswer, String correctAnswer ){
+        if (correctAnswer.equals(userAnswer)) {
+            System.out.println("Correct!");
+        } else {
+            Engine.loosing(userName, userAnswer, correctAnswer);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class Calc {
             int first = Engine.randomNum();
             int second = Engine.randomNum();
             char operand = Engine.randomOperand();
-            int rightAnswer = switch (operand) {
+            int correctAnswer = switch (operand) {
                 case '+' -> first + second;
                 case '-' -> first - second;
                 default -> first * second;
@@ -20,11 +20,7 @@ public class Calc {
             System.out.println("Question: " + first + " " + operand + " " + second);
             System.out.print("Your answer: ");
             int userAnswer = scanner.nextInt();
-            if (userAnswer == rightAnswer) {
-                System.out.println("Correct!");
-            } else {
-                Engine.loosing(userName, userAnswer + "", rightAnswer + "");
-            }
+            Engine.checkingAnswer(userName, Integer.toString(userAnswer), Integer.toString(correctAnswer) );
         }
         Engine.wining(userName);
     }

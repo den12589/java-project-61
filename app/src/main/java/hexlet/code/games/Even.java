@@ -13,12 +13,9 @@ public class Even {
             int random = Engine.randomNum();
             String correctAnswer = random % 2 == 0 ? "yes" : "no";
             System.out.println("Question: " + random);
+            System.out.print("Your answer: ");
             String userAnswer = scanner.next();
-            if (correctAnswer.equals(userAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                Engine.loosing(userName, userAnswer, correctAnswer);
-            }
+           Engine.checkingAnswer(userName, userAnswer, correctAnswer);
         }
         Engine.wining(userName);
     }
