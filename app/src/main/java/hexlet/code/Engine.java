@@ -69,7 +69,7 @@ public class Engine {
         return '*';
     }
 
-    public static void checkingAnswer(String userName, String correctAnswer, String userAnswer ) {
+    public static void checkingAnswer(String userName, String correctAnswer, String userAnswer) {
         if (correctAnswer.equals(userAnswer)) {
             System.out.println("Correct!");
         } else {
