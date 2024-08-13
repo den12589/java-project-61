@@ -4,8 +4,8 @@ run :
 		gradle run
 clean :
 		gradle clean
-install:
-		gradle clean install
+install: clean
+		gradle install
 build : clean
 		gradle installDist
 lint :
