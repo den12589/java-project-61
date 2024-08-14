@@ -12,7 +12,7 @@ public class GCD {
         for (int i = 0; i < 3; i++) {
             int first = (int) (Math.random() * 100);
             int second = (int) (Math.random() * 100);
-            String correctAnswer = takeGCD(first, second);
+            String correctAnswer = Integer.toString(gcd(first, second));
             System.out.println("Question: " + first + " " + second);
             System.out.print("Your answer: ");
             String userAnswer = sc.nextLine();
@@ -20,13 +20,8 @@ public class GCD {
         }
         Engine.wining(userName);
     }
-    public static String takeGCD(int first, int second) {
-        int gcd = 1;
-        for (int i = 1; i <= first && i <= second; i++) {
-            if (first % i == 0 && second % i == 0) {
-                gcd = i;
-            }
-        }
-        return Integer.toString(gcd);
+
+    public static int gcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
     }
 }
