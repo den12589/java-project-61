@@ -9,8 +9,8 @@ public class Even {
     public static void play(String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
-            int random = (int) (Math.random() * 100);
+        for (int i = 0; i < Engine.getCountGames(); i++) {
+            int random = Engine.getRandom();
             String correctAnswer = (random % 2 == 0 ? "yes" : "no");
             System.out.println("Question: " + random);
             System.out.print("Your answer: ");

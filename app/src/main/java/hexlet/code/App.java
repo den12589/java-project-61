@@ -1,15 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
-
-import java.util.Scanner;
-
-import static hexlet.code.Engine.grittingUser;
-
 public class App {
     public static void main(String[] args) {
         System.out.print("""
@@ -22,29 +12,7 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-
-        Scanner sc = new Scanner(System.in);
-        switch (sc.nextInt()) {
-            case 1:
-                grittingUser();
-                break;
-            case 2:
-                Even.play(grittingUser());
-                break;
-            case 3:
-                Calc.play(grittingUser());
-                break;
-            case 4:
-                GCD.play(grittingUser());
-                break;
-            case 5:
-                Progression.play(grittingUser());
-                break;
-            case 6:
-                Prime.play(grittingUser());
-            default:
-                System.exit(0);
-        }
+        Engine.start();
     }
 }
 

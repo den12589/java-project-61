@@ -4,16 +4,15 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
-
 public class Calc {
 
     public static void play(String userName) {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
-            int first = (int) (Math.random() * 100);
-            int second = (int) (Math.random() * 100);
-            char operand = randomOperand();
+        for (int i = 0; i < Engine.getCountGames(); i++) {
+            int first = Engine.getRandom();
+            int second = Engine.getRandom();
+            char operand = Engine.randomOperand();
             String correctAnswer = Integer.toString(
                 switch (operand) {
                     case '+' -> first + second;
@@ -26,15 +25,5 @@ public class Calc {
             Engine.checkingAnswer(userName, correctAnswer, userAnswer);
         }
         Engine.wining(userName);
-    }
-    public static char randomOperand() {
-        int i = (int) (Math.random() * 100);
-        if (i < 33) {
-            return '+';
-        }
-        if (i < 66) {
-            return '-';
-        }
-        return '*';
     }
 }
