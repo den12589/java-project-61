@@ -18,10 +18,10 @@ public class Engine {
     private static final int PROGRESS = 5;
     private static final int PRIME = 6;
 
-    private final static int MAX_COUNT_IN_LINE = 10;
-    private final static int MIN_COUNT_IN_LINE = 5;
-    private final static int MAX_VALUE_NUM = 100;
-    private final static int ROUNDS = 3;
+    private static final  int MAX_COUNT_IN_LINE = 10;
+    private static final int MIN_COUNT_IN_LINE = 5;
+    private static final  int MAX_VALUE_NUM = 100;
+    private static final  int ROUNDS = 3;
 
     public static void start() {
         Scanner sc = new Scanner(System.in);
