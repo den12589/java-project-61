@@ -11,12 +11,12 @@ import java.util.StringJoiner;
 
 public class Engine {
 
-    private final static int GRIT = 1 ;
-    private final static int EVEN = 2 ;
-    private final static int CALC = 3 ;
-    private final static int GCD = 4;
-    private final static int PROGRESS = 5;
-    private final static int PRIME = 6;
+    private static final int GRIT = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESS = 5;
+    private static final int PRIME = 6;
 
     private final static int MAX_COUNT_IN_LINE = 10;
     private final static int MIN_COUNT_IN_LINE = 5;
