@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -37,7 +41,7 @@ public class App {
                 Progression.play(grittingUser());
                 break;
             case 6:
-               Prime.play(grittingUser());
+                Prime.play(grittingUser());
             default:
                 System.exit(0);
         }
