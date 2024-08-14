@@ -14,7 +14,7 @@ public class Progression {
             int step = Engine.getRandom();
             int count;
             do {
-                count = Engine.getRandom();
+                count = Engine.getRandomCount();
             } while (count < Engine.getMinCount() || count > Engine.getMaxCount());
             System.out.print("Question: ");
             String correctAnswer = Engine.progressionLine(first, count, step);

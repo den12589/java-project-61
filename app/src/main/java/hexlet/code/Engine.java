@@ -13,7 +13,7 @@ public class Engine {
 
     private final static int maxCountInLine = 10;
     private final static int minCountInLine = 5;
-    private final static int maxValueNum = 5;
+    private final static int maxValueNum = 100;
     private final static int gamesCount = 3;
 
     public static void start() {
@@ -80,6 +80,10 @@ public class Engine {
         return (int) (Math.random() * maxValueNum);
     }
 
+    public static int getRandomCount() {
+        return (int) (Math.random() * maxCountInLine);
+    }
+
     public static char randomOperand() {
         char[] operands = {'+', '-', '*'};
         return operands[(int) (Math.random() * operands.length)];
@@ -95,7 +99,7 @@ public class Engine {
         int questionStep;
         int correctAnswer = 0;
         do {
-            questionStep = maxValueNum;
+            questionStep = getRandomCount();
         } while (questionStep >= count);
 
         for (int i = 0; i < count; i++) {
