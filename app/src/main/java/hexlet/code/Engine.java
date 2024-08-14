@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
@@ -11,30 +11,37 @@ import java.util.StringJoiner;
 
 public class Engine {
 
-    private final static int maxCountInLine = 10;
-    private final static int minCountInLine = 5;
-    private final static int maxValueNum = 100;
-    private final static int gamesCount = 3;
+    private final static int GRIT = 1 ;
+    private final static int EVEN = 2 ;
+    private final static int CALC = 3 ;
+    private final static int GCD = 4;
+    private final static int PROGRESS = 5;
+    private final static int PRIME = 6;
+
+    private final static int MAX_COUNT_IN_LINE = 10;
+    private final static int MIN_COUNT_IN_LINE = 5;
+    private final static int MAX_VALUE_NUM = 100;
+    private final static int ROUNDS = 3;
 
     public static void start() {
         Scanner sc = new Scanner(System.in);
         switch (sc.nextInt()) {
-            case 1:
+            case GRIT:
                 grittingUser();
                 break;
-            case 2:
+            case EVEN:
                 Even.play(grittingUser());
                 break;
-            case 3:
+            case CALC:
                 Calc.play(grittingUser());
                 break;
-            case 4:
-                GCD.play(grittingUser());
+            case GCD:
+                Gcd.play(grittingUser());
                 break;
-            case 5:
+            case PROGRESS:
                 Progression.play(grittingUser());
                 break;
-            case 6:
+            case PRIME:
                 Prime.play(grittingUser());
             default:
                 System.exit(0);
@@ -73,15 +80,15 @@ public class Engine {
     }
 
     public static int getCountGames() {
-        return gamesCount;
+        return ROUNDS;
     }
 
     public static int getRandom() {
-        return (int) (Math.random() * maxValueNum);
+        return (int) (Math.random() * MAX_VALUE_NUM);
     }
 
     public static int getRandomCount() {
-        return (int) (Math.random() * maxCountInLine);
+        return (int) (Math.random() * MAX_COUNT_IN_LINE);
     }
 
     public static char randomOperand() {
@@ -116,11 +123,11 @@ public class Engine {
     }
 
     public static int getMinCount() {
-        return minCountInLine;
+        return MIN_COUNT_IN_LINE;
     }
 
     public static int getMaxCount() {
-        return maxCountInLine;
+        return MAX_COUNT_IN_LINE;
     }
 
     public static boolean isPrime(int i) {

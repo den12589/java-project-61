@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
-public class GCD {
+public class Gcd {
 
     public static void play(String userName) {
         System.out.println("Find the greatest common divisor of given numbers.");
