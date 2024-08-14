@@ -11,6 +11,11 @@ import java.util.StringJoiner;
 
 public class Engine {
 
+    private final static int maxCountInLine = 10;
+    private final static int minCountInLine = 5;
+    private final static int maxValueNum = 5;
+    private final static int gamesCount = 3;
+
     public static void start() {
         Scanner sc = new Scanner(System.in);
         switch (sc.nextInt()) {
@@ -68,23 +73,16 @@ public class Engine {
     }
 
     public static int getCountGames() {
-        return 3;
+        return gamesCount;
     }
 
     public static int getRandom() {
-        int maxValue = 100;
-        return (int) (Math.random() * maxValue);
+        return (int) (Math.random() * maxValueNum);
     }
 
     public static char randomOperand() {
-        int i = (int) (Math.random() * 100);
-        if (i < 33) {
-            return '+';
-        }
-        if (i < 66) {
-            return '-';
-        }
-        return '*';
+        char[] operands = {'+', '-', '*'};
+        return operands[(int) (Math.random() * operands.length)];
     }
 
     public static int gcd(int a, int b) {
@@ -97,7 +95,7 @@ public class Engine {
         int questionStep;
         int correctAnswer = 0;
         do {
-            questionStep = Math.abs((int) (Math.random() * 10));
+            questionStep = maxValueNum;
         } while (questionStep >= count);
 
         for (int i = 0; i < count; i++) {
@@ -114,11 +112,11 @@ public class Engine {
     }
 
     public static int getMinCount() {
-        return 5;
+        return minCountInLine;
     }
 
-    public static int getMaxCounts() {
-        return 10;
+    public static int getMaxCount() {
+        return maxCountInLine;
     }
 
     public static boolean isPrime(int i) {
