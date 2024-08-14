@@ -14,7 +14,7 @@ public class Engine {
     }
 
     public static void wining(String userName) {
-        System.out.println("Congratulations, " + userName);
+        System.out.print("Congratulations, " + userName);
         System.exit(0);
     }
 
