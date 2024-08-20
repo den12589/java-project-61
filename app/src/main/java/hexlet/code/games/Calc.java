@@ -17,8 +17,8 @@ public class Calc {
     }
 
     private static String[] generateRound() {
-        var first = new Random().nextInt(1, 100);
-        var second = new Random().nextInt(1, 100);
+        var first = new Random().nextInt(1, Engine.MAX_RANGE);
+        var second = new Random().nextInt(1, Engine.MAX_RANGE);
         var operand = randomOperand();
         var question = first + " " + operand + " " + second;
         var correctAnswer = calculateAnswer(first, second, operand);

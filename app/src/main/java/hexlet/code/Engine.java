@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int ROUNDS = 3;
+    public static final int MAX_RANGE = 100;
 
     public static void run(String[][] rounds, String rules) {
         Scanner scanner = new Scanner(System.in);

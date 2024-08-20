@@ -8,6 +8,8 @@ import java.util.StringJoiner;
 public class Progression {
 
     private static final String RULES = "What number is missing in the progression?";
+    private static final int MAX_STEP_COUNT = 10;
+    private static final int MIN_STEP_COUNT = 5;
 
     public static void run() {
         var rounds = new String[Engine.ROUNDS][];
@@ -18,9 +20,9 @@ public class Progression {
     }
 
     private static String[] generateRound() {
-        var first = new Random().nextInt(1, 100);
-        var count = new Random().nextInt(5, 10);
-        var step = new Random().nextInt(1, 100);
+        var first = new Random().nextInt(1, Engine.MAX_RANGE);
+        var count = new Random().nextInt(MIN_STEP_COUNT, MAX_STEP_COUNT);
+        var step = new Random().nextInt(1, Engine.MAX_RANGE);
         return progressionLine(first, count, step);
 
     }

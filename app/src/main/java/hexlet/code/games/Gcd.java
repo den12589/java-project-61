@@ -17,8 +17,8 @@ public class Gcd {
     }
 
     private static String[] generateRound() {
-        var first = new Random().nextInt(1, 100);
-        var second = new Random().nextInt(1, 100);
+        var first = new Random().nextInt(1, Engine.MAX_RANGE);
+        var second = new Random().nextInt(1, Engine.MAX_RANGE);
         var question = first + " " + second;
         var correctAnswer = gcd(first, second);
         return new String[]{question, String.valueOf(correctAnswer)};
