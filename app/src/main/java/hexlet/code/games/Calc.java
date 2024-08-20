@@ -2,28 +2,41 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Calc {
 
-    public static void play(String userName) {
-        System.out.println("What is the result of the expression?");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Engine.getCountGames(); i++) {
-            int first = Engine.getRandom();
-            int second = Engine.getRandom();
-            char operand = Engine.randomOperand();
-            String correctAnswer = Integer.toString(
-                switch (operand) {
-                    case '+' -> first + second;
-                    case '-' -> first - second;
-                    default -> first * second;
-                });
-            System.out.println("Question: " + first + " " + operand + " " + second);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.nextLine();
-            Engine.checkingAnswer(userName, correctAnswer, userAnswer);
+    private static final String RULES = "What is the result of the expression?";
+
+    public static void run() {
+        var rounds = new String[Engine.ROUNDS][];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            rounds[i] = generateRound();
         }
-        Engine.wining(userName);
+        Engine.run(rounds, RULES);
     }
+
+    private static String[] generateRound() {
+        var first = new Random().nextInt(1, 100);
+        var second = new Random().nextInt(1, 100);
+        var operand = randomOperand();
+        var question = first + " " + operand + " " + second;
+        int i;
+        switch (operand) {
+            case '+':
+                i = first + second;
+            case '-':
+                i = first - second;
+            default:
+                i = first * second;
+        }
+        String correctAnswer = Integer.toString(i);
+        return new String[]{question, correctAnswer};
+    }
+
+    private static char randomOperand() {
+        char[] operands = {'+', '-', '*'};
+        return operands[(int) (Math.random() * operands.length)];
+    }
+
 }

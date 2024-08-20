@@ -2,22 +2,30 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Gcd {
 
-    public static void play(String userName) {
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < Engine.getCountGames(); i++) {
-            int first = Engine.getRandom();
-            int second = Engine.getRandom();
-            String correctAnswer = Integer.toString(Engine.gcd(first, second));
-            System.out.println("Question: " + first + " " + second);
-            System.out.print("Your answer: ");
-            String userAnswer = sc.nextLine();
-            Engine.checkingAnswer(userName, correctAnswer, userAnswer);
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
+
+    public static void run() {
+        var rounds = new String[Engine.ROUNDS][];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            rounds[i] = generateRound();
         }
-        Engine.wining(userName);
+        Engine.run(rounds, RULES);
     }
+
+    private static String[] generateRound() {
+        var first = new Random().nextInt(1, 100);
+        var second = new Random().nextInt(1, 100);
+        var question = first + " " + second;
+        var correctAnswer = gcd(first, second);
+        return new String[]{question, String.valueOf(correctAnswer)};
+    }
+
+    private static int gcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
+    }
+
 }

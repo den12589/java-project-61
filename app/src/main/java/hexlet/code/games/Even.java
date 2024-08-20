@@ -2,22 +2,28 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Even {
 
-    public static void play(String userName) {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Engine.getCountGames(); i++) {
-            int random = Engine.getRandom();
-            String correctAnswer = (random % 2 == 0 ? "yes" : "no");
-            System.out.println("Question: " + random);
-            System.out.print("Your answer: ");
-            String userAnswer =  scanner.next();
-            Engine.checkingAnswer(userName, correctAnswer, userAnswer);
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+    public static void run() {
+        var rounds = new String[Engine.ROUNDS][];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            rounds[i] = generateRound();
         }
-        Engine.wining(userName);
+        Engine.run(rounds, RULES);
+    }
+
+    private static String[] generateRound() {
+        var question = new Random().nextInt(1, 100);
+        var correctAnswer = isEven(question) ? "yes" : "no";
+        return new String[]{String.valueOf(question), correctAnswer};
+    }
+
+    private static boolean isEven(int i) {
+        return i % 2 == 0;
     }
 }
 
