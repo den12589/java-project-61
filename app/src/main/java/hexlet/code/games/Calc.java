@@ -21,22 +21,22 @@ public class Calc {
         var second = new Random().nextInt(1, 100);
         var operand = randomOperand();
         var question = first + " " + operand + " " + second;
-        int i;
-        switch (operand) {
-            case '+':
-                i = first + second;
-            case '-':
-                i = first - second;
-            default:
-                i = first * second;
-        }
-        String correctAnswer = Integer.toString(i);
-        return new String[]{question, correctAnswer};
+        var correctAnswer = calculateAnswer(first, second, operand);
+        return new String[]{question, String.valueOf(correctAnswer)};
+
+    }
+
+    private static int calculateAnswer(int first, int second, char operand) {
+        return switch (operand) {
+            case '+' -> first + second;
+            case '-' -> first - second;
+            case '*' -> first * second;
+            default -> throw new RuntimeException("unknown operation");
+        };
     }
 
     private static char randomOperand() {
         char[] operands = {'+', '-', '*'};
         return operands[(int) (Math.random() * operands.length)];
     }
-
 }

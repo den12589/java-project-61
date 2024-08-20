@@ -22,7 +22,7 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 loosing(userName, round[1], userAnswer);
-                break;
+                return;
             }
         }
         wining(userName);
@@ -37,6 +37,5 @@ public class Engine {
                 + " is wrong answer ;(. Correct answer was "
                 + "'" + correctAnswer + "'" + ".\n");
         System.out.println("Let's try again, " + userName + "!");
-        System.exit(0);
     }
 }
