@@ -30,7 +30,7 @@ public class Engine {
     }
 
     public static void wining(String userName) {
-        System.out.print("Congratulations, " + userName + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 
     public static void loosing(String userName, String correctAnswer, String userAnswer) {
