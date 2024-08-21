@@ -3,6 +3,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b04f0e5c3be2430aca7f/maintainability)](https://codeclimate.com/github/den12589/java-project-61/maintainability)
 
 
+<a href="https://asciinema.org/a/235qY5nDsgRJDLz41A2iyoekJ" target="_blank"><img src="https://asciinema.org/a/235qY5nDsgRJDLz41A2iyoekJ.svg" /></a>
+
+
 
 1-Gritting --------> https://asciinema.org/a/xVX7OQH8YLiut5rBZSA6fRrkC
 
