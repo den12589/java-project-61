@@ -22,21 +22,13 @@ public class Engine {
             if (userAnswer.equals(round[1])) {
                 System.out.println("Correct!");
             } else {
-                loosing(userName, round[1], userAnswer);
+                System.out.println("'" + userAnswer + "'"
+                        + " is wrong answer ;(. Correct answer was "
+                        + "'" + round[1] + "'" + ".\n");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
-        wining(userName);
-    }
-
-    public static void wining(String userName) {
         System.out.println("Congratulations, " + userName + "!");
-    }
-
-    public static void loosing(String userName, String correctAnswer, String userAnswer) {
-        System.out.println("'" + userAnswer + "'"
-                + " is wrong answer ;(. Correct answer was "
-                + "'" + correctAnswer + "'" + ".\n");
-        System.out.println("Let's try again, " + userName + "!");
     }
 }

@@ -2,24 +2,25 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Util.generateRandomNumber;
 
 public class Calc {
 
-    private static final String RULES = "What is the result of the expression?";
+    private static final String RULE_LINE = "What is the result of the expression?";
+    private static final char[] OPERANDS = {'+', '-', '*'};
 
     public static void run() {
         var rounds = new String[Engine.ROUNDS][];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             rounds[i] = generateRound();
         }
-        Engine.run(rounds, RULES);
+        Engine.run(rounds, RULE_LINE);
     }
 
     private static String[] generateRound() {
-        var first = new Random().nextInt(1, Engine.MAX_RANGE);
-        var second = new Random().nextInt(1, Engine.MAX_RANGE);
-        var operand = randomOperand();
+        var first = generateRandomNumber(1, Engine.MAX_RANGE);
+        var second = generateRandomNumber(1, Engine.MAX_RANGE);
+        var operand = takeOperand();
         var question = first + " " + operand + " " + second;
         var correctAnswer = calculateAnswer(first, second, operand);
         return new String[]{question, String.valueOf(correctAnswer)};
@@ -35,8 +36,7 @@ public class Calc {
         };
     }
 
-    private static char randomOperand() {
-        char[] operands = {'+', '-', '*'};
-        return operands[(int) (Math.random() * operands.length)];
+    private static char takeOperand() {
+        return OPERANDS[(generateRandomNumber(0, OPERANDS.length - 1))];
     }
 }
