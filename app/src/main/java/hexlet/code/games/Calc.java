@@ -37,6 +37,6 @@ public class Calc {
     }
 
     private static char takeOperand() {
-        return OPERANDS[(generateRandomNumber(0, OPERANDS.length - 1))];
+        return OPERANDS[(generateRandomNumber(0, OPERANDS.length))];
     }
 }
