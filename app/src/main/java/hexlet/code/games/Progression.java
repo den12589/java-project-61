@@ -21,10 +21,10 @@ public class Progression {
     }
 
     private static String[] generateRound() {
-        var first = generateRandomNumber(1, Engine.MAX_RANGE);
+        var first = generateRandomNumber(1);
         var count = generateRandomNumber(MIN_STEP_COUNT, MAX_STEP_COUNT);
-        var step = generateRandomNumber(1, Engine.MAX_RANGE);
-        String[] questionProgression = generateProgression(first, count, step).split(" ");
+        var step = generateRandomNumber(1);
+        String[] questionProgression = generateProgression(first, count, step);
         var questionStep = generateRandomNumber(0, count);
         StringJoiner line = new StringJoiner(" ");
         String correctAnswer = "";
@@ -39,13 +39,13 @@ public class Progression {
         return new String[]{line.toString(), correctAnswer};
     }
 
-    public static String generateProgression(int first, int count, int step) {
-        StringJoiner line = new StringJoiner(" ");
+    public static String[] generateProgression(int first, int count, int step) {
+        String[] result = new String[count];
         int current = first;
         for (int i = 0; i < count; i++) {
-            line.add(Integer.toString(current));
+            result[i] = Integer.toString(current);
             current += step;
         }
-        return line.toString();
+        return result;
     }
 }

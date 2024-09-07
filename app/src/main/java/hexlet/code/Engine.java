@@ -9,9 +9,8 @@ public class Engine {
 
     public static void run(String[][] rounds, String rules) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Welcome to the Brain Games!\n"
-                +
-                "May I have your name? ");
+        System.out.print("Welcome to the Brain Games!");
+        System.out.println("May I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
@@ -22,7 +21,7 @@ public class Engine {
             if (userAnswer.equals(round[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "'"
+                System.out.println("\n" + "'" + userAnswer + "'"
                         + " is wrong answer ;(. Correct answer was "
                         + "'" + round[1] + "'" + ".\n");
                 System.out.println("Let's try again, " + userName + "!");
