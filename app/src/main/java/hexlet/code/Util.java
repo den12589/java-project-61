@@ -8,6 +8,6 @@ public class Util {
     }
 
     public static int generateRandomNumber(int begin) {
-        return new Random().nextInt(begin,  Engine.MAX_RANGE);
+        return generateRandomNumber(begin, Engine.MAX_RANGE);
     }
 }

@@ -31,7 +31,7 @@ public class Progression {
         for (int i = 0; i < questionProgression.length; i++) {
             if (i == questionStep) {
                 line.add("..");
-                correctAnswer = String.valueOf(questionProgression[i]);
+                correctAnswer = questionProgression[i];
             } else {
                 line.add(questionProgression[i]);
             }
